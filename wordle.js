@@ -1,29 +1,46 @@
-
-
  //Computer choose a random word from word list
+ //Wishlist for later: computer keep same random word for 24 hours depending on user's geo-location
 
- //list for guessing, human words for those answers
- 
  function computerChoose(){
 
     let randomIndex = Math.floor(Math.random()*validWords.length);
     let computerChoice = validWords[randomIndex];
 
-    console.log(randomIndex);
+    
 
     return computerChoice;
 
  }
 
- console.log(validWords[randomIndex]);
- console.log(computerChoose());
+ //list for guessing, human words for those answers
+ 
+let userInput = document.getElementById("userInput").value;
+
+console.log(computerChoose());
+
+let computerChoiceArray = computerChoose().split("");
+let userInputArray = userInput.split("");
+
+console.log(computerChoiceArray);
+console.log(userInputArray);
+
+function compareWords(){
+    
+   // Get input from user
+ //turn both inputs into an array
+ //
 
  
+
+
+//computer compare index text
+}
+
  
- // Get input from user
+
  // check if matches 
 
-
+//count number of guesses
 
 
     //   let figures = document.getElementById("userInput").value
