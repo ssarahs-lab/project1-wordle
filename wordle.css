@@ -1,0 +1,84 @@
+/* Style this HTML keyboard using flexboxes.
+
+Ensure the following:
+
+the keys are square
+the keys shrink as the width of the browser window is changed
+the spacebar is long
+the rows roughly line up with a real keyboard (e.g., the Q is leftmost, the A is slightly to the right, the Z is slightly more to the right)
+
+Optional extensions (pick and choose your favourites):
+
+style the keyboard to look like your keyboard
+add in a number row
+generate the key HTML dynamically using JavaScript
+show your own custom keyboard layout
+add in shift keys
+make them work
+highlight keys (e.g., make them green) which have not appeared in the output textarea yet */
+        
+        textarea {
+            width: -webkit-fill-available;
+            height: 300px;
+            border-radius: 10px;
+            background-color:rgb(220,220,220) ;
+        }
+        .keyboard {
+            
+            background-color: rgb(192,192,192);
+            border-radius: 10px;
+            border: 5px solid rgb(128,128,128);
+
+        }
+
+        div .row {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+        }
+        .key {
+            max-width: 100px;
+            max-height: 100px;  
+           gap: 10px;
+            flex-basis: 50px;
+            flex-shrink: -5px;
+            min-width: 50px;
+            min-height: 50px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+        }
+
+        #row-0 {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        #row-1 {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        #row-2 {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #row-3 {
+            display: flex;
+            justify-content:space-evenly ;
+            gap: 50px;
+        }
+
+        #spacebar {
+            
+            display: flex;
+            min-width: 290px;
+            
+        }
+
+  
