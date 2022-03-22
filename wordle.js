@@ -13,7 +13,7 @@ function computerChoose(){
 
  }
 
-const testWords = ['AALII', 'AARGH', 'AARTI', 'ABACA']
+const testWords = ['AALII']
 
  //list for guessing, human words for those answers
 
@@ -22,9 +22,9 @@ function compareWords(){
    // Get input from user
    //turn both inputs into an array
 
-   let userInputValue = userInput.value; 
+   let userInputValue = userInput.value.toUpperCase(); 
    let userInputArray = userInputValue.split("");
-   let userInputArrayUpperCase = userInputArray.toUpperCase();
+  
    let computerChoiceArray = computerChoose().split("");
 
    //if letter and index match, then green
@@ -32,12 +32,47 @@ function compareWords(){
 
    console.log(userInputArray)
 
-   if(userInputArray.includes(computerChoiceArray) == true ){
+   let letterPosition = 0
 
-      console.log()
+   for (const letter of userInputArray){
+
+      //if userinput and position are correct
+
+            if(userInputArray[letterPosition] === computerChoiceArray[letterPosition]){
+               
+               console.log(userInputArray[letterPosition])
+               console.log("green" + userInputArray[letterPosition]);
+
+           
+      //if only userinput matches   
+
+            } else if (computerChoiceArray.includes(letter)){
+
+            console.log(userInputArray[letterPosition]);
+            console.log("yellow" + userInputArray[letterPosition])
+           
+      //else if nothing matches
+            } else {
+
+               console.log(userInputArray[letterPosition])
+               console.log("grey" + userInputArray[letterPosition]);
+            }
+
+         letterPosition++;
 
    }
-  
+
+}
+
+   
+
+
+
+//if userinput is less than 5 letters
+  //if userinput is not a valid word
+
+
+
   //make green class, if 5 classlength green - "you've won"
    //make guess counter, end game at 6 guesses
    
@@ -59,7 +94,3 @@ function compareWords(){
       // }
 
    //computer compare index text
-
-}
-
- 
