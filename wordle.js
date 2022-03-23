@@ -5,34 +5,48 @@ let userInput = document.getElementById("userInput");
 
 function computerChoose(){
 
-    let randomIndex = Math.floor(Math.random()*testWords.length);
-    let computerChoice = testWords[randomIndex];
+    let randomIndex = Math.floor(Math.random()*validWords.length);
+    let computerChoice = validWords[randomIndex];
 
     console.log(computerChoice);
     return computerChoice;
 
  }
 
-const testWords = ['AALII']
+
 
  //list for guessing, human words for those answers
 
 function compareWords(){
     
-   // Get input from user
-   //turn both inputs into an array
-
    let userInputValue = userInput.value.toUpperCase(); 
    let userInputArray = userInputValue.split("");
   
    let computerChoiceArray = computerChoose().split("");
 
-   //if letter and index match, then green
-   //if letter only matches, then yellow
+    console.log(userInputArray)
 
-   console.log(userInputArray)
+    //make sure it has 5 letters
 
-   let letterPosition = 0
+    if(userInputArray.length < 5){
+
+      console.log("you have less than five letters!");
+      return;
+
+    }
+    
+    //check if a valid word
+
+    if(!validWords.includes(userInputValue)){
+
+      console.log("this is not a valid word!");
+      return;
+
+    }
+
+   
+   //for loop to check the guesses 
+    let letterPosition = 0
 
    for (const letter of userInputArray){
 
