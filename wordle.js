@@ -1,4 +1,6 @@
 let userInput = document.getElementById("userInput");
+let mainContainer = document.getElementById("mainContainer");
+let  guessCounter = 1;
 
  //Computer choose a random word from word list
  //Wishlist for later: computer keep same random word for 24 hours depending on user's geo-location
@@ -13,8 +15,6 @@ function computerChoose(){
 
  }
 
-
-
  //list for guessing, human words for those answers
 
 function compareWords(){
@@ -24,57 +24,92 @@ function compareWords(){
   
    let computerChoiceArray = computerChoose().split("");
 
-    console.log(userInputArray)
+   //end if guesses exceed 6 guesses 
+      if(guessCounter > 6){
+         
+         return;
 
-    //make sure it has 5 letters
+      }
 
-    if(userInputArray.length < 5){
+   console.log(userInputArray)
 
-      console.log("you have less than five letters!");
-      return;
+      //make sure it has 5 letters
 
-    }
+      if(userInputArray.length < 5){
+
+         console.log("you have less than five letters!");
+         return;
+
+      }
     
-    //check if a valid word
+      //check if a valid word
 
-    if(!validWords.includes(userInputValue)){
+      if(!validWords.includes(userInputValue)){
 
-      console.log("this is not a valid word!");
-      return;
+         console.log("this is not a valid word!");
+         return;
 
-    }
+      }
 
    
    //for loop to check the guesses 
     let letterPosition = 0
+  
 
-   for (const letter of userInputArray){
+    let div = document.createElement('div');
+    mainContainer.appendChild(div);
+    div.classList.add('container','row'+guessCounter);
 
-      //if userinput and position are correct
+for (const letter of userInputArray){
 
-            if(userInputArray[letterPosition] === computerChoiceArray[letterPosition]){
+         let p = document.createElement('p');
+         
+         
+         console.log(letter);
+         
+         //the div text content is every item in this for-loop
+         p.textContent = letter;
+
+         //give every div a class of box, and row number
+         p.classList.add('box');
+         
+         p.classList.add('row'+ guessCounter);
+
+         //append the new div into the container div
+         
+         div.appendChild(p);
+
+                  //if userinput and position are correct
+
+                  if(userInputArray[letterPosition] === computerChoiceArray[letterPosition]){
+                     
+                     console.log(userInputArray[letterPosition])
+                     console.log("green" + userInputArray[letterPosition]);
+
                
-               console.log(userInputArray[letterPosition])
-               console.log("green" + userInputArray[letterPosition]);
+                  //if only userinput matches   
 
-           
-      //if only userinput matches   
+                  } else if (computerChoiceArray.includes(letter)){
 
-            } else if (computerChoiceArray.includes(letter)){
+                  console.log(userInputArray[letterPosition]);
+                  console.log("yellow" + userInputArray[letterPosition])
+               
+                  //else if nothing matches
+                  
+                  } else {
 
-            console.log(userInputArray[letterPosition]);
-            console.log("yellow" + userInputArray[letterPosition])
-           
-      //else if nothing matches
-            } else {
+                     console.log(userInputArray[letterPosition])
+                     console.log("grey" + userInputArray[letterPosition]);
+                  }
 
-               console.log(userInputArray[letterPosition])
-               console.log("grey" + userInputArray[letterPosition]);
-            }
-
-         letterPosition++;
+               letterPosition++;
 
    }
+        
+
+         console.log("guess counter " + guessCounter);
+         console.log("letterPosition" + letterPosition);
+        guessCounter++;
 
 }
 

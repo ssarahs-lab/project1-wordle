@@ -31,6 +31,26 @@ highlight keys (e.g., make them green) which have not appeared in the output tex
 
         }
 
+        #mainContainer {
+
+            border: 2px solid black;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            gap:15px;
+        }
+
+        p.box {
+
+            border: 2px solid gainsboro;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            align-items: center;
+        }
+
+       
+
         div .row {
             display: flex;
             justify-content: center;
