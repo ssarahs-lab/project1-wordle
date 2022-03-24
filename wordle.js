@@ -1,9 +1,35 @@
 let userInput = document.getElementById("userInput");
 let mainContainer = document.getElementById("mainContainer");
-let  guessCounter = 1;
+let guessCounter = 1;
+
+let number = 0;
+let row1 = document.getElementById("row1");
+let row2 = document.getElementById("row2");
+let row3 = document.getElementById("row3");
+let row4 = document.getElementById("row4");
+let row5 = document.getElementById("row5");
+let row6 = document.getElementById("row6");
+let box1 = document.getElementById("box1");
+let box2 = document.getElementById("box2");
+let box3 = document.getElementById("box3");
+let box4 = document.getElementById("box4");
+let box5 = document.getElementById("box5");
+
+
+
+//to do:
+//link keyboard to input tag
+//input user output into grid
+//win/lose link
+
+//link and play around with animate.css
+//change font
+
+   
 
  //Computer choose a random word from word list
  //Wishlist for later: computer keep same random word for 24 hours depending on user's geo-location
+const wordleAnswer = computerChoose();
 
 function computerChoose(){
 
@@ -18,104 +44,112 @@ function computerChoose(){
  //list for guessing, human words for those answers
 
 function compareWords(){
+
+   //end if guesses exceed 6 guesses
+   
+   if(guessCounter > 6){
+         
+      return;
+
+   }
     
    let userInputValue = userInput.value.toUpperCase(); 
    let userInputArray = userInputValue.split("");
-  
-   let computerChoiceArray = computerChoose().split("");
-
-   //end if guesses exceed 6 guesses 
-      if(guessCounter > 6){
-         
-         return;
-
-      }
+   let computerChoiceArray = wordleAnswer.split("");
 
    console.log(userInputArray)
 
-      //make sure it has 5 letters
-
-      if(userInputArray.length < 5){
+   //make sure it has 5 letters
+   
+   if(userInputArray.length < 5){
 
          console.log("you have less than five letters!");
          return;
 
-      }
+   }
     
-      //check if a valid word
+   //check if a valid word
 
-      if(!validWords.includes(userInputValue)){
+   if(!validWords.includes(userInputValue)){
 
-         console.log("this is not a valid word!");
-         return;
+   console.log("this is not a valid word!");
+   return;
 
-      }
-
+   }
+   let letterPosition = 1;
    
-   //for loop to check the guesses 
-    let letterPosition = 0
-  
-
-    let div = document.createElement('div');
-    mainContainer.appendChild(div);
-    div.classList.add('container','row'+guessCounter);
+//for loop to check the guesses 
 
 for (const letter of userInputArray){
 
-         let p = document.createElement('p');
-         
-         
-         console.log(letter);
-         
-         //the div text content is every item in this for-loop
-         p.textContent = letter;
+   
+      //get current position for letter
+      const currentBox = document.getElementById("row"+guessCounter+"-box"+(letterPosition));
+      
+      currentBox.innerHTML = letter;
+           
 
-         //give every div a class of box, and row number
-         p.classList.add('box');
-         
-         p.classList.add('row'+ guessCounter);
+            //if userinput and position are correct
 
-         //append the new div into the container div
-         
-         div.appendChild(p);
+            if(userInputArray[letterPosition] === computerChoiceArray[letterPosition]){
+                           
+            console.log(userInputArray[letterPosition]);
 
-                  //if userinput and position are correct
+            console.log("green" + userInputArray[letterPosition]);
 
-                  if(userInputArray[letterPosition] === computerChoiceArray[letterPosition]){
+            currentBox.classList.add("green");
+
                      
-                     console.log(userInputArray[letterPosition])
-                     console.log("green" + userInputArray[letterPosition]);
+            //if only userinput matches   
 
-               
-                  //if only userinput matches   
+            } else if (computerChoiceArray.includes(letter)){
 
-                  } else if (computerChoiceArray.includes(letter)){
+            console.log(userInputArray[letterPosition]);
+            console.log("yellow" + userInputArray[letterPosition])
+            currentBox.classList.add("yellow");
+                     
+            //else if nothing matches
+                        
+            } else {
 
-                  console.log(userInputArray[letterPosition]);
-                  console.log("yellow" + userInputArray[letterPosition])
-               
-                  //else if nothing matches
-                  
-                  } else {
+            console.log(userInputArray[letterPosition]);
+            console.log("grey" + userInputArray[letterPosition]);
+            currentBox.classList.add("grey");
+            
+         }
+            
+         letterPosition++;
+         
 
-                     console.log(userInputArray[letterPosition])
-                     console.log("grey" + userInputArray[letterPosition]);
-                  }
-
-               letterPosition++;
-
-   }
-        
-
-         console.log("guess counter " + guessCounter);
-         console.log("letterPosition" + letterPosition);
+      }
+         
         guessCounter++;
 
 }
 
-   
+//Keyboard
+//Code from Kenni Bawden
 
+// let output =[]
+//         let keys = document.getElementsByClassName('key');
+//         for (let keyElement of keys) {
+//             let key = keyElement
+            
+//             keyElement.addEventListener('click', function() {
+//                 switch (key) {
+//                     case '␡':
+//                         output  = output.slice(0, output.length-1);
+//                         break;
+//                     case '␡ all':
+//                         output = '';
+//                         break;
+//                     default:
+//                         output.push(keyElement);
+//                 }
+//             })
+//         }
 
+//         console.log(output);
 
 //if userinput is less than 5 letters
   //if userinput is not a valid word

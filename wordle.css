@@ -1,22 +1,4 @@
-/* Style this HTML keyboard using flexboxes.
 
-Ensure the following:
-
-the keys are square
-the keys shrink as the width of the browser window is changed
-the spacebar is long
-the rows roughly line up with a real keyboard (e.g., the Q is leftmost, the A is slightly to the right, the Z is slightly more to the right)
-
-Optional extensions (pick and choose your favourites):
-
-style the keyboard to look like your keyboard
-add in a number row
-generate the key HTML dynamically using JavaScript
-show your own custom keyboard layout
-add in shift keys
-make them work
-highlight keys (e.g., make them green) which have not appeared in the output textarea yet */
-        
         textarea {
             width: -webkit-fill-available;
             height: 300px;
@@ -31,22 +13,77 @@ highlight keys (e.g., make them green) which have not appeared in the output tex
 
         }
 
+        body {
+            background-color: #2C3531;
+            color: azure;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
         #mainContainer {
 
-            border: 2px solid black;
-            height: 50vh;
-            display: flex;
+           
+           
+            display: grid;
             justify-content: center;
+            
             gap:15px;
         }
 
-        p.box {
+        #outputContainer {
+ 
+            display: grid;
+            justify-content: center;
+            gap:15px;
+            margin: 45px;
 
-            border: 2px solid gainsboro;
+        }
+
+        input {
+
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+
+        .container {
+
+            display: flex;
+            flex-direction: row;
+           
+            height: 60px;
+            width: 90vw;
+            justify-content: center;
+
+        }
+
+        p {
+
+            border: 2px solid #D1E8E2;
             height: 50px;
             width: 50px;
             text-align: center;
             align-items: center;
+            margin: 2.5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .green {
+
+            background-color: #116466;
+        }
+
+        .yellow {
+
+            background-color: #ffcb9a;
+        }
+
+        .grey {
+
+            background-color: #D1E8E2;
         }
 
        
