@@ -132,14 +132,19 @@ const btn = document.querySelector('.btn-toggle');
 // Listen for a click on the button
 btn.addEventListener('click', function() {
   // Then toggle (add/remove) the .dark-theme class to the body
-  document.body.classList.toggle('dark-theme');  
+ 
 
   if(btn.textContent== "Switch to Light Mode"){
 
    btn.textContent = "Switch to Dark Mode";
+   document.body.classList.add('light-theme');  
+  document.body.classList.remove('dark-theme');
+
   } else if (btn.textContent== "Switch to Dark Mode"){
 
    btn.textContent = "Switch to Light Mode";
+   document.body.classList.remove('light-theme');  
+  document.body.classList.add('dark-theme');
   }
 
 })
