@@ -13,24 +13,35 @@
 
         }
 
-        body {
-            background-color: #2C3531;
-            color: azure;
+        body.dark-theme {
+            background-color: black;
+            color: white;
+            font-family: 'Avenir Black', 'Arial Black', sans-serif;
+            transition: background-color 1s;
+        }
+
+        body.light-theme{
+
+            transition: background-color 1s;
         }
 
         h1 {
             text-align: center;
         }
 
+        header {
+            text-align: center;
+            margin: 20px;
+        }
         #mainContainer {
 
-           
-           
             display: grid;
             justify-content: center;
-            
-            gap:15px;
+            gap:5px;
+           
         }
+
+        
 
         #outputContainer {
  
@@ -66,19 +77,28 @@
             width: 50px;
             text-align: center;
             align-items: center;
-            margin: 2.5px;
+            margin: 5px;
             display: flex;
             justify-content: center;
+            border-radius: 2px;
+        }
+
+        button {
+            background-color: black;
+            border: 2px solid white;
+            color: white;
+            font-family: "Alegreya Sans", sans-serif;
+
         }
 
         .green {
 
-            background-color: #116466;
+            background-color: #14A76c;
         }
 
         .yellow {
 
-            background-color: #ffcb9a;
+            background-color: #FFe400;
         }
 
         .grey {
@@ -108,34 +128,4 @@
             border-radius: 10px;
         }
 
-        #row-0 {
-            display: flex;
-            justify-content: space-evenly;
-
-        }
-
-        #row-1 {
-            display: flex;
-            justify-content: space-evenly;
-
-        }
-
-        #row-2 {
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        #row-3 {
-            display: flex;
-            justify-content:space-evenly ;
-            gap: 50px;
-        }
-
-        #spacebar {
-            
-            display: flex;
-            min-width: 290px;
-            
-        }
-
-  
+       

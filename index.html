@@ -17,15 +17,21 @@ keyboard input into each div box -->
     
 
     <link rel="stylesheet" href="wordle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="dark-theme || light-theme">
     <header> 
-        <h1>Wordle</h1>
+        <h1>Wordle</h1> 
+
+        <button class="btn-toggle">Switch to Light Mode</button>
     </header>
 
-    <div id="mainContainer">
+    <div id="mainContainer" >
 
+            
             <div class="container" id="row1">
 
                 <p id="row1-box1"></p>
@@ -82,8 +88,9 @@ keyboard input into each div box -->
 
     <div id="outputContainer">
    
-
-    <input type="text"  id="userInput" maxlength="5" >
+<div id="messageContainer"> Welcome to Wordle! Enter a guess below</div>
+</div><div id="outputContainer">
+<input type="text"  id="userInput" maxlength="5" >
     <button onclick="compareWords()">Make a Guess</button>
       
     
