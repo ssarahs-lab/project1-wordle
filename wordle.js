@@ -11,13 +11,6 @@ let row4 = document.getElementById("row4");
 let row5 = document.getElementById("row5");
 let row6 = document.getElementById("row6");
 
-
-
-//to do:
-
-//win/lose link 
-
- //Computer choose a random word from word list
  
 const wordleAnswer = computerChoose();
 
@@ -152,14 +145,27 @@ for (const letter of userInputArray){
                   return
                }
                guessCounter++;
-               userInput.value = " ";
+               //clear user input, refocus on input bar for next guess
+
+               userInput.value = "";
+               userInput.focus();
 
 }
 
 
+// Event listener so user can press Enter instead of clicking submit
 
+userInput.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("submit").click();
+  }
+});
 
-//toggle dark mode
+//switch between dark mode / lightmode
 
 // Select the button
 const btn = document.querySelector('.btn-toggle');
@@ -183,3 +189,21 @@ btn.addEventListener('click', function() {
   }
 
 })
+
+// let keys = document.getElementsByClassName('key');
+
+//         for (let keyElement of keys) {
+//             let key = keyElement.textContent;
+//             keyElement.addEventListener('click', function() {
+//                 switch (key) {
+//                     case '␡':
+//                         userInputValue.textContent = output.textContent.slice(0, output.textContent.length-1);
+//                         break;
+//                     case '␡ all':
+//                         userInput.value.textContent = '';
+//                         break;
+//                     default:
+//                         userInputValue.textContent += key;
+//                 }
+//             });
+//         }
