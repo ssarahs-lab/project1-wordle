@@ -11,13 +11,14 @@ let row4 = document.getElementById("row4");
 let row5 = document.getElementById("row5");
 let row6 = document.getElementById("row6");
 
+const validWords = computerChoiceWords;
  
 const wordleAnswer = computerChoose();
 
 function computerChoose(){
 
     let randomIndex = Math.floor(Math.random()*validWords.length);
-    let computerChoice = validWords[randomIndex];
+    let computerChoice = validWords[randomIndex].toUpperCase();
 
     console.log(computerChoice);
     return computerChoice;
@@ -60,7 +61,7 @@ function compareWords(){
     
    //check if a valid word
 
-   if(!validWords.includes(userInputValue)){
+   if(!allWords.includes(userInputValue)){
 
    console.log("this is not a valid word!");
    messageContainer.textContent = "This is not a valid word!"
@@ -190,20 +191,36 @@ btn.addEventListener('click', function() {
 
 })
 
-// let keys = document.getElementsByClassName('key');
+let keys = document.getElementsByClassName('key');
 
-//         for (let keyElement of keys) {
-//             let key = keyElement.textContent;
-//             keyElement.addEventListener('click', function() {
-//                 switch (key) {
-//                     case '␡':
-//                         userInputValue.textContent = output.textContent.slice(0, output.textContent.length-1);
-//                         break;
-//                     case '␡ all':
-//                         userInput.value.textContent = '';
-//                         break;
-//                     default:
-//                         userInputValue.textContent += key;
-//                 }
-//             });
-//         }
+        for (let keyElement of keys) {
+
+      
+            let key = keyElement.textContent;
+            let userInputValue = userInput.value.toUpperCase(); 
+            let userInputArray = userInputValue.split("");
+
+            for (const letter of userInputArray){
+
+  
+               //for every letter in the box, make the keyboard grey
+
+            }
+
+
+
+            keyElement.addEventListener('click', function() {
+                switch (key) {
+
+                  
+                    case '␡':
+                        userInput.value = userInput.value.slice(0, userInput.value.length-1);
+                        break;
+                    case '␡ all':
+                        userInput.value = '';
+                        break;
+                    default:
+                        userInput.value += key;
+                }
+            });
+        }

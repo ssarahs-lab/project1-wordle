@@ -25,6 +25,9 @@
        
         }
 
+        body {
+            height: 100vh;
+        }
        
 
         body.dark-theme {
@@ -73,6 +76,10 @@
            
         }
 
+        #messageContainer {
+            text-align: center;
+        }
+
         #dialogContainer {
             display: grid;
             grid-template-rows: 70px 350px 50px;
@@ -82,10 +89,19 @@
  
             display: grid;
             justify-content: center;
-            gap:15px;
-            margin: 45px;
+            margin-top: 25px;
 
         }
+
+        #keyboardContainer {
+ 
+            display: grid;
+            justify-content: center;
+            gap:15px;
+            margin: 20px;
+
+        }
+
 
         input {
 
@@ -122,6 +138,7 @@
 
             background-color: #D1E8E2;
             border: 1px solid black;
+            color:black;
 
         }
         button {
@@ -162,11 +179,40 @@
            gap: 10px;
             flex-basis: 50px;
             flex-shrink: -5px;
-            min-width: 50px;
-            min-height: 50px;
+            min-width: 30px;
+            min-height: 30px;
             background-color: black;
             color: white;
             border-radius: 10px;
         }
 
+        #row-0 {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        #row-1 {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        #row-2 {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #row-3 {
+            display: flex;
+            justify-content:space-evenly ;
+            gap: 50px;
+        }
+
+        #spacebar {
+            
+            display: flex;
+            min-width: 130px;
+            
+        }
        
