@@ -3,6 +3,8 @@
 
 Live site: https://ssarahs-lab.github.io/ga-wordle/index.html
 
+<a href="https://ssarahs-lab.github.io/ga-wordle/index.html" target="_blank">Or click here!</a>
+
 ## Background ##
 
 This fun project is something I made as part of General Assembly's Software Engineering Flex Immersive Course, taught by Katie Bell and Kenni Bawden.
