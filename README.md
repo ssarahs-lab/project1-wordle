@@ -1,2 +1,28 @@
-# ga-wordle
-General Assembly Wordle project
+
+# Wordle - A General Assembly project # 
+
+Live site: https://ssarahs-lab.github.io/ga-wordle/index.html
+
+## Background ##
+
+This fun project is something I made as part of General Assembly's Software Engineering Flex Immersive Course, taught by Katie Bell and Kenni Bawden.
+
+It involves the use of HTML, CSS and vanilla Javascript.
+
+Wordle is a popular online game (in 2022) that involves guessing a five letter word. The user types in a guess and the game gives feedback by colouring each tile according to whether it matches the word - green for correct placement and letter, yellow for a matching letter, grey for no matches at all. 
+
+
+## Process
+In making this, I began with a Javascript function to test user input, console-logging all the way. 
+
+Once this was completed, I made a HTML page styled with CSS grid and flex, so that it would be responsive to a smaller page and would be mobile friendly - given most users play this via mobile. 
+
+Because of the short timeframe required to make the game (one week), some hurdles for me involved identifying which components of the game were more critical in building the "skateboard"/basic working version of the game, before upgrading various things on top of this working version - i.e. adding a functional keyboard, sharing to social media option, sessional/local storage for user's game.
+
+## Side comments 
+I loved making this game, 10/10 would do it again!
+
+
+## Future updates
+- Share to social media option
+- Add a functional keyboard with greyed out keys indicating previous use in a guess
