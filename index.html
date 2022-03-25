@@ -13,6 +13,7 @@ keyboard input into each div box -->
     <script defer src="words.js"></script>
     <script defer src="keyboard.js"></script>
     <script defer src="wordle.js"></script>
+    
      
     
 
@@ -24,9 +25,29 @@ keyboard input into each div box -->
 
 <body class="light-theme">
     <header> 
+        
+        <div id="headerContainer">
         <h1>Wordle</h1> 
-
+        <button id="howToPlay" onclick="window.dialog.showModal();">How to play</button>
         <button class="btn-toggle">Switch to Dark Mode</button>
+        
+        <dialog id="dialog">
+            <div id="dialogContainer">
+                <h2>How to play </h2> 
+                <div>Guess the WORDLE in six tries.
+
+                Each guess must be a valid five-letter word. 
+                
+                Type in a guess and click submit.
+
+                After each guess, the color of the tiles will change to show how close your guess was to the word. 
+                
+                (Green for correct letter and position, yellow for correct letter, grey for no match.) </div>
+                        
+                <button onclick="window.dialog.close();"> Close </button>
+            </div>
+        </dialog>
+    </div>
     </header>
 
     <div id="mainContainer" >   
@@ -90,7 +111,7 @@ keyboard input into each div box -->
    
 <div id="messageContainer"> Welcome to Wordle! Enter a guess below</div>
 </div><div id="outputContainer">
-<input type="text"  id="userInput" maxlength="5" >
+<input type="text"  id="userInput" maxlength="5"  >
     <button onclick="compareWords()">Submit</button>
       
     

@@ -35,7 +35,7 @@ function computerChoose(){
 
 function compareWords(){
 
-
+   
    messageContainer.textContent = ""
    //end if guesses exceed 6 guesses
    
@@ -125,7 +125,7 @@ for (const letter of userInputArray){
 
       }
             //select current row of boxes that are all green
-            
+
             const p = document.querySelectorAll('.row'+guessCounter+".green")
 
            
@@ -152,14 +152,11 @@ for (const letter of userInputArray){
                   return
                }
                guessCounter++;
+               userInput.value = " ";
 
 }
 
-function winOrLose(){
 
-  
-
-}
 
 
 //toggle dark mode

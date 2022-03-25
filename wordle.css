@@ -13,11 +13,28 @@
 
         }
 
+        dialog>h2 {
+            height: 34px;
+        }
+
+        dialog {
+            width: 315px;
+            height: 500px;
+           border-color:#D1E8E2;
+         
+       
+        }
+
+       
+
         body.dark-theme {
             background-color: black;
             color: white;
             font-family: 'Avenir Black', 'Arial Black', sans-serif;
             transition: background-color 1s;
+
+            
+            
         }
 
         body.light-theme {
@@ -27,13 +44,26 @@
             
         }
 
+        
         h1 {
             text-align: center;
         }
 
+
         header {
             text-align: center;
             margin: 20px;
+            display: flex;
+            justify-content: space-around;
+          
+        }
+
+        #headerContainer{
+
+            display: grid;
+            width: 183px;
+            gap: 5px;
+    
         }
         #mainContainer {
 
@@ -43,7 +73,10 @@
            
         }
 
-        
+        #dialogContainer {
+            display: grid;
+            grid-template-rows: 70px 350px 50px;
+        }
 
         #outputContainer {
  
@@ -85,9 +118,15 @@
             border-radius: 2px;
         }
 
+        #howToPlay{
+
+            background-color: #D1E8E2;
+            border: 1px solid black;
+
+        }
         button {
             background-color: black;
-            border: 2px solid white;
+            border: 1px solid white;
             color: white;
             font-family: "Alegreya Sans", sans-serif;
             padding: 8px;
