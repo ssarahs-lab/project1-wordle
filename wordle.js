@@ -35,6 +35,8 @@ function computerChoose(){
 
 function compareWords(){
 
+
+   messageContainer.textContent = ""
    //end if guesses exceed 6 guesses
    
    if(guessCounter > 6){
@@ -43,6 +45,8 @@ function compareWords(){
 
    }
     
+   console.log("wordleAnswer " + wordleAnswer);
+
    let userInputValue = userInput.value.toUpperCase(); 
    let userInputArray = userInputValue.split("");
    let computerChoiceArray = wordleAnswer.split("");
@@ -72,54 +76,88 @@ function compareWords(){
    return;
 
    }
-   let letterPosition = 1;
    
+   let letterPosition = 0;
 //for loop to check the guesses 
 
 for (const letter of userInputArray){
 
-   
-      //get current position for letter
-      const currentBox = document.getElementById("row"+guessCounter+"-box"+(letterPosition));
-      
-      currentBox.innerHTML = letter;
-           
+  
+            //get current position for letter and print into box
+            const currentBox = document.querySelector(".row"+guessCounter+".box"+(letterPosition+1));
 
-            //if userinput and position are correct
+            console.log(currentBox)
+            currentBox.innerHTML = letter;
+            // currentBox.classList.add("animate__flip")
+               
 
-            if(userInputArray[letterPosition] === computerChoiceArray[letterPosition]){
-                           
-            console.log(userInputArray[letterPosition]);
+                  //if userinput and position are correct
 
-            console.log("green" + userInputArray[letterPosition]);
+                  if(userInputArray[letterPosition] === computerChoiceArray[letterPosition]){
+                
+                  currentBox.classList.add("green");
+               
+                  //if only userinput matches  
 
-            currentBox.classList.add("green");
+                  } else if (computerChoiceArray.includes(letter)){
 
-                     
-            //if only userinput matches   
-
-            } else if (computerChoiceArray.includes(letter)){
-
-            console.log(userInputArray[letterPosition]);
-            console.log("yellow" + userInputArray[letterPosition])
-            currentBox.classList.add("yellow");
-                     
-            //else if nothing matches
-                        
-            } else {
-
-            console.log(userInputArray[letterPosition]);
-            console.log("grey" + userInputArray[letterPosition]);
-            currentBox.classList.add("grey");
+                  currentBox.classList.add("yellow");
             
-         }
-            
+                  //else if nothing matches
+                              
+                  } else {
+
+                  currentBox.classList.add("grey");
+               
+                  }
+                  
          letterPosition++;
          
+         const p = document.querySelectorAll('p');
+   
+               // if (p.classList.contains('green') == true && p.classList.contains('row'+guessCounter)){
+               //    console.log("You've won!");
+               
+               //    return
+               // }
+
+
 
       }
-         
-        guessCounter++;
+            //select current row of boxes that are all green
+            
+            const p = document.querySelectorAll('.row'+guessCounter+".green")
+
+           
+            //if 5 boxes are green, you've won
+            
+              if(guessCounter > 5 && p.length == 5) {
+            
+                  messageContainer.textContent = "Youve won! That was close"
+                 
+                  return
+                  
+               } else if(p.length == 5){
+                
+                  messageContainer.textContent = "You've won!"
+                
+                  return
+               
+               }
+               
+               else if (guessCounter > 5) {
+                  
+                  messageContainer.textContent = "Better luck next time "
+                  
+                  return
+               }
+               guessCounter++;
+
+}
+
+function winOrLose(){
+
+  
 
 }
 

@@ -19,6 +19,19 @@ Once this was completed, I made a HTML page styled with CSS grid and flex, so th
 
 Because of the short timeframe required to make the game (one week), some hurdles for me involved identifying which components of the game were more critical in building the "skateboard"/basic working version of the game, before upgrading various things on top of this working version - i.e. adding a functional keyboard, sharing to social media option, sessional/local storage for user's game.
 
+In my function, I prioritised
+1. checking that the user entered five letters
+2. checking that it was a valid word..
+
+..before..
+3. Checking for letters that don't match
+4. Checking for yellow letters (matching letter only)
+5. Checking for green letters (matching position and letter)
+
+going from the biggest filter, to the most narrow filter for my if-statements.
+
+
+
 ## Side comments 
 I loved making this game, 10/10 would do it again!
 
