@@ -149,7 +149,15 @@ for (const letter of userInputArray){
                //clear user input, refocus on input bar for next guess
 
                userInput.value = "";
-               userInput.focus();
+
+               if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                  
+                  console.log("continue");
+
+                } else {
+                  userInput.focus();
+                }
+               
 
 }
 
