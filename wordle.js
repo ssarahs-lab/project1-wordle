@@ -200,12 +200,12 @@ let keys = document.getElementsByClassName('key');
             let userInputValue = userInput.value.toUpperCase(); 
             let userInputArray = userInputValue.split("");
 
-            for (const letter of userInputArray){
+            // for (const letter of userInputArray){
 
   
-               //for every letter in the box, make the keyboard grey
+            //    //for every letter in the box, make the keyboard grey
 
-            }
+            // }
 
 
 
