@@ -3,6 +3,9 @@
 
 <a href="https://ssarahs-lab.github.io/project1-wordle/" target="_blank">Live site</a>
 
+
+![wordle preview](https://i.imgur.com/sddQqK7.png)
+
 ## Background ##
 
 This fun project is something I made as part of General Assembly's Software Engineering Flex Immersive Course, taught by Katie Bell and Kenni Bawden.
