@@ -1,9 +1,7 @@
 
 # Wordle - A General Assembly project # 
 
-Live site: https://ssarahs-lab.github.io/ga-wordle/index.html
-
-<a href="https://ssarahs-lab.github.io/ga-wordle/index.html" target="_blank">Or click here!</a>
+<a href="https://ssarahs-lab.github.io/project1-wordle/" target="_blank">Live site</a>
 
 ## Background ##
 
